@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyg3qus2f0870"]
+
+[ext_resource type="Script" uid="uid://ddbptpc3fmhr4" path="res://scenes/character_body_2d.gd" id="1_4dvvg"]
+[ext_resource type="Texture2D" uid="uid://d3x14t5b1fdse" path="res://assets/ball things/drawing-1.png" id="2_rnjyy"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_4dvvg")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(230, 232.99994)
+scale = Vector2(0.27329975, 0.22929652)
+texture = ExtResource("2_rnjyy")
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
