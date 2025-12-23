@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwtuc5lr3eoly"
-path="res://.godot/imported/batch_Layer 1.png-aa5acbe0efa9b3a0d5158ff74c172560.ctex"
+uid="uid://cyddgqs0u80wf"
+path="res://.godot/imported/fruit.png-279224447d23d6bee09668f5e6afe83b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/collision ball/batch_Layer 1.png"
-dest_files=["res://.godot/imported/batch_Layer 1.png-aa5acbe0efa9b3a0d5158ff74c172560.ctex"]
+source_file="res://assets/brackeys_platformer_assets/sprites/fruit.png"
+dest_files=["res://.godot/imported/fruit.png-279224447d23d6bee09668f5e6afe83b.ctex"]
 
 [params]
 
