@@ -47,7 +47,7 @@ size = Vector2(8, 10)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v5wyi")
 autoplay = "default"
-frame_progress = 0.60290045
+frame_progress = 0.016940556
 
 [node name="Killzone" parent="." instance=ExtResource("2_n6pvg")]
 

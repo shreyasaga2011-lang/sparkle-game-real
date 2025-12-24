@@ -1,7 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://b3rlp08rkk23"]
+[gd_scene load_steps=16 format=3 uid="uid://b3rlp08rkk23"]
 
+[ext_resource type="Script" uid="uid://daj8mhbme11dm" path="res://scripts/game_manager.gd" id="1_gee14"]
 [ext_resource type="PackedScene" uid="uid://crw363brbviai" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://cpddym6u1j14o" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_yqjtg"]
+[ext_resource type="Script" uid="uid://dsphjcoqpemyg" path="res://scenes/camera_2d.gd" id="3_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://c1uwwmsx0qv2e" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://c1g6dwxco83t6" path="res://scenes/coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bytpxhk7523e0" path="res://scenes/killzone.tscn" id="5_p57ef"]
@@ -216,15 +218,22 @@ distance = -190.0
 
 [node name="game" type="Node2D"]
 
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_gee14")
+
 [node name="player" parent="." instance=ExtResource("1_uwrxv")]
+unique_name_in_owner = true
 position = Vector2(193, 139)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
+unique_name_in_owner = true
 position = Vector2(-1, 0)
 zoom = Vector2(4, 4)
 limit_bottom = 290
 limit_smoothed = true
 position_smoothing_enabled = true
+script = ExtResource("3_0tnpc")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_lbhrr")
@@ -243,16 +252,18 @@ libraries = {
 }
 autoplay = "RESET"
 
-[node name="Coin" parent="." instance=ExtResource("4_lbhrr")]
+[node name="coins" type="Node" parent="."]
+
+[node name="Coin" parent="coins" instance=ExtResource("4_lbhrr")]
 position = Vector2(104, 119)
 
-[node name="Coin2" parent="." instance=ExtResource("4_lbhrr")]
+[node name="Coin2" parent="coins" instance=ExtResource("4_lbhrr")]
 position = Vector2(136, 183)
 
-[node name="Coin3" parent="." instance=ExtResource("4_lbhrr")]
+[node name="Coin3" parent="coins" instance=ExtResource("4_lbhrr")]
 position = Vector2(104, 183)
 
-[node name="Coin4" parent="." instance=ExtResource("4_lbhrr")]
+[node name="Coin4" parent="coins" instance=ExtResource("4_lbhrr")]
 position = Vector2(120, 119)
 
 [node name="Killzone" parent="." instance=ExtResource("5_p57ef")]
@@ -275,6 +286,17 @@ position = Vector2(265, 115)
 
 [node name="slimeMove2" parent="." instance=ExtResource("7_u5sy4")]
 position = Vector2(153, 33)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 1003.0
+offset_top = 41.0
+offset_right = 1097.0
+offset_bottom = 76.0
+theme_override_font_sizes/font_size = 25
+text = "Money: 0"
 
 [connection signal="body_entered" from="Killzone" to="player" method="_on_killzone_body_entered"]
 [connection signal="body_shape_entered" from="Killzone" to="player" method="_on_killzone_body_shape_entered"]
