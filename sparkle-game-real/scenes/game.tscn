@@ -267,6 +267,7 @@ position = Vector2(104, 183)
 position = Vector2(120, 119)
 
 [node name="Killzone" parent="." instance=ExtResource("5_p57ef")]
+position = Vector2(6, -19)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(188, 78)
