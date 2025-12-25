@@ -49,3 +49,12 @@ func _physics_process(delta: float) -> void:
 	
 func die ():
 	is_alive = false
+@onready var timer: Timer = $Camera2D/Timer
+
+func looker ():
+		self.get_node("CollisionShape2D").remove_child
+		timer.start()
+
+func  _on_timer_timeout() -> void:
+	self.get_node("CollisionShape2D").add_child
+	
