@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="sparkle-game-real"
-run/main_scene="uid://b3rlp08rkk23"
+run/main_scene="uid://cl0e1lji7miau"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
