@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://ctwnwweny3k0o"]
+[gd_scene load_steps=2 format=3 uid="uid://ctwnwweny3k0o"]
+
+[ext_resource type="Script" uid="uid://kqir884nn1pt" path="res://scenes/quit.gd" id="1_i2gav"]
 
 [node name="controls" type="Node2D"]
+script = ExtResource("1_i2gav")
