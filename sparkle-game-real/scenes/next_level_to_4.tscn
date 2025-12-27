@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://d3jmnxwo2qh0"]
+
+[ext_resource type="Script" uid="uid://dhls8wbx8871k" path="res://scenes/next_level_to_4.gd" id="1_04wvb"]
+[ext_resource type="Texture2D" uid="uid://cy5frrxoislu" path="res://assets/brackeys_platformer_assets/sprites/New Piskel-1.png (1).png" id="2_2aona"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h6g8q"]
+
+[sub_resource type="Animation" id="Animation_73mp2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-6.2831855]
+}
+
+[sub_resource type="Animation" id="Animation_h6g8q"]
+resource_name = "new_animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-6.2831855, 6.2831855]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2lnr5"]
+_data = {
+&"RESET": SubResource("Animation_73mp2"),
+&"new_animation": SubResource("Animation_h6g8q")
+}
+
+[node name="nextLevelTo3" type="Area2D"]
+rotation = -6.2831855
+collision_mask = 2
+script = ExtResource("1_04wvb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_2aona")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.7453293
+shape = SubResource("CircleShape2D_h6g8q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2lnr5")
+}
+autoplay = "new_animation"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
