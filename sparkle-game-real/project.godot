@@ -18,7 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Killzone="*res://scenes/killzone.gd"
-Global="*res://global.gd"
+EndLabel="*res://scenes/end_label.gd"
+global="*res://globalscore.gd"
 
 [editor_plugins]
 

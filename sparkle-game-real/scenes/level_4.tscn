@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dsphjcoqpemyg" path="res://scenes/camera_2d.gd" id="3_7ewpb"]
 [ext_resource type="Texture2D" uid="uid://cpddym6u1j14o" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="4_py6g0"]
 [ext_resource type="Script" uid="uid://c4r6ocsxgse6m" path="res://scenes/score_label.gd" id="5_wom6i"]
-[ext_resource type="Script" uid="uid://cndtpq3mujr54" path="res://scenes/EndLabel.gd" id="6_ycko3"]
+[ext_resource type="Script" uid="uid://du113swc100gt" path="res://scenes/end_label.gd" id="6_ycko3"]
 [ext_resource type="PackedScene" uid="uid://bytpxhk7523e0" path="res://scenes/killzone.tscn" id="7_dmmei"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
@@ -220,10 +220,10 @@ text = "Money: 0"
 script = ExtResource("5_wom6i")
 
 [node name="EndLabel" type="Label" parent="."]
-offset_left = 177.0
-offset_top = 59.0
-offset_right = 217.0
-offset_bottom = 82.0
+offset_left = 179.0
+offset_top = 100.0
+offset_right = 219.0
+offset_bottom = 123.0
 script = ExtResource("6_ycko3")
 
 [connection signal="body_entered" from="Killzone" to="player" method="_on_killzone_body_entered"]
