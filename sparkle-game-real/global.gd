@@ -1,9 +1,10 @@
 extends Node
+@onready var end_label: Label = $EndLabel
 
-var score: int = 0  
+var globalscore = 0
 
 func add_point():
-	score += 1
-
-func reset_score():
-	score = 0
+	globalscore += 1
+	
+func _physics_process(delta: float) -> void:
+	end_label.text = "Money: " + str(globalscore)

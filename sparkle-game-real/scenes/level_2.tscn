@@ -1,9 +1,9 @@
 [gd_scene load_steps=13 format=3 uid="uid://cwg6edfptela0"]
 
-[ext_resource type="Script" uid="uid://daj8mhbme11dm" path="res://scripts/game_manager.gd" id="1_6cvei"]
 [ext_resource type="PackedScene" uid="uid://crw363brbviai" path="res://scenes/player.tscn" id="2_que50"]
 [ext_resource type="Script" uid="uid://dsphjcoqpemyg" path="res://scenes/camera_2d.gd" id="3_hey2k"]
 [ext_resource type="Texture2D" uid="uid://cpddym6u1j14o" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="4_172wr"]
+[ext_resource type="Script" uid="uid://c4r6ocsxgse6m" path="res://scenes/score_label.gd" id="5_6cvei"]
 [ext_resource type="PackedScene" uid="uid://c1g6dwxco83t6" path="res://scenes/coin.tscn" id="6_fldb1"]
 [ext_resource type="PackedScene" uid="uid://bx7laa2qjnhkp" path="res://scenes/slimecolor.tscn" id="6_wo48x"]
 [ext_resource type="PackedScene" uid="uid://bytpxhk7523e0" path="res://scenes/killzone.tscn" id="7_guvtl"]
@@ -179,10 +179,6 @@ distance = -190.0
 
 [node name="game" type="Node2D"]
 
-[node name="GameManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("1_6cvei")
-
 [node name="player" parent="." instance=ExtResource("2_que50")]
 unique_name_in_owner = true
 position = Vector2(202, 143)
@@ -227,6 +223,7 @@ offset_right = 1097.0
 offset_bottom = 76.0
 theme_override_font_sizes/font_size = 25
 text = "Money: 0"
+script = ExtResource("5_6cvei")
 
 [node name="slime" parent="." instance=ExtResource("6_wo48x")]
 position = Vector2(312, 114)

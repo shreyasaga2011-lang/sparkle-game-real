@@ -1,6 +1,5 @@
 [gd_scene load_steps=17 format=3 uid="uid://b3rlp08rkk23"]
 
-[ext_resource type="Script" uid="uid://lglrvwax48l" path="res://scenes/game_manager.gd" id="1_2y5yt"]
 [ext_resource type="PackedScene" uid="uid://crw363brbviai" path="res://scenes/player.tscn" id="2_2os1m"]
 [ext_resource type="Script" uid="uid://dsphjcoqpemyg" path="res://scenes/camera_2d.gd" id="3_go7sj"]
 [ext_resource type="Texture2D" uid="uid://cpddym6u1j14o" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="4_7gny6"]
@@ -8,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c1g6dwxco83t6" path="res://scenes/coin.tscn" id="6_6dial"]
 [ext_resource type="PackedScene" uid="uid://bytpxhk7523e0" path="res://scenes/killzone.tscn" id="7_7nomh"]
 [ext_resource type="PackedScene" uid="uid://cajgqnuhsc4ag" path="res://scenes/slime.tscn" id="8_1s4pk"]
+[ext_resource type="Script" uid="uid://c4r6ocsxgse6m" path="res://scenes/score_label.gd" id="9_2y5yt"]
 [ext_resource type="PackedScene" uid="uid://deghc8lch5pd5" path="res://scenes/slimeMove.tscn" id="9_x2xxo"]
 [ext_resource type="PackedScene" uid="uid://2iy6s5aqe0ed" path="res://scenes/next_level_to_2.tscn" id="10_2cbcq"]
 
@@ -219,10 +219,6 @@ distance = -190.0
 
 [node name="game" type="Node2D"]
 
-[node name="GameManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("1_2y5yt")
-
 [node name="player" parent="." instance=ExtResource("2_2os1m")]
 unique_name_in_owner = true
 position = Vector2(202, 143)
@@ -350,6 +346,7 @@ offset_right = 1097.0
 offset_bottom = 76.0
 theme_override_font_sizes/font_size = 25
 text = "Money: 0"
+script = ExtResource("9_2y5yt")
 
 [node name="nextLevel" parent="." instance=ExtResource("10_2cbcq")]
 position = Vector2(-616, -31)
